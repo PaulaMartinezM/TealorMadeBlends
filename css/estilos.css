@@ -313,12 +313,20 @@ main h3{
 .te__blend img{
     width: 20rem;
     height: 20rem;
-}    
+    transition: all 2s;
+}   
+.te__blend img:hover{
+    height: 25rem;
+    width: 25rem;
+} 
 
 .te__blend span{
     text-decoration: none;
     font-family: 'Asap', sans-serif;
     color: #768D7B;
+}
+.img__qs__ind:hover{
+    transform: translate(10px,10px);
 }
 @media screen and (max-width: 768px) {
     
