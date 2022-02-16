@@ -4,6 +4,15 @@
     padding: 0;
     box-sizing: 0;
 }
+.container-fluid{
+    background-color: #C49A64;
+}
+.row{
+    padding-bottom: 0.5rem;
+}
+.nav-item{
+    text-align: center;
+}
 header .marca{
     display: grid;
     background-color: #AABEAB;
@@ -27,59 +36,23 @@ header nav li a{
     text-decoration: none;
     color: white;   
 }
-.foto__principal{
-    display: grid;
-    grid-template-rows: repeat(3, 1fr);
-    justify-self: center;  
-}
 .banner{
     width: 100%;
 }
+body{
+    font-family: 'Asap', sans-serif;
+    color: #768D7B;
+}
 .principales{
     font-family: 'Asap', sans-serif;
-    font-size: 2rem;
+    font-size: 1rem;
+    text-align: center;
     color: #768D7B;
     padding-top: 2rem;
     padding-bottom: 1rem;
     padding-left: 2rem;
 }
-.principal__opcion{
-    display: grid;
-    grid-template-areas: "imagena imagenb imagenc" "textoa textob textoc";
-    justify-content: space-around;
-    padding-top: 2rem;
-}
-.imagena{
-    grid-area: imagena;
-    justify-self: center;
-    width: 100%;
-    height: 100%;
-}
-.imagenb{
-    grid-area: imagenb;
-    justify-self: center;
-    width: 100%;
-    height: 100%;
-}
-.imagenc{
-    grid-area: imagenc;
-    justify-self: center;
-    width: 100%;
-    height: 100%;
-}
-.textoa{
-    grid-area: textoa;
-    justify-self: center;
-    font-size: 1rem;
-}
-.textob{
-    grid-area: textob;
-    justify-self: center;
-    font-size: 1rem;
-}
-.textoc{
-    grid-area: textoc;
-    justify-self: center;
+.textonov{
     font-size: 1rem;
 }
 .inicio{
@@ -96,7 +69,6 @@ header nav li a{
 }
 footer{
     display: grid;
-    grid-template-rows: repeat(2, 1fr);
     align-content: center;
     justify-content: center;
     background-color: #C49A64;
@@ -116,7 +88,11 @@ footer{
     font-family: 'Asap',sans-serif;
     color: white;
     font-size: 0.7rem;
-    padding-bottom: 3rem;
+    
+}
+.main{
+    font-family: 'Asap',sans-serif;
+    color: #768D7B;   
 }
 .main__contacto{
     display: grid;
@@ -342,26 +318,9 @@ main h3{
         text-align: center;
         padding-left: 0;
     }
-    .principal__opcion{
-        grid-template-areas: "imagena" "textoa" "imagenb" "textob" "imagenc" "textoc";
-        width: 100%;
-        justify-content: center;
-        align-content: center;
-        gap: 1rem;
-    }
-    .textoa{
-        font-size: 1.5rem;
-    }
-    .textob{
-        font-size: 1.5rem;
-    }
-    .textoc{
-        font-size: 1.5rem;
-    }
     .copyright{
         text-align: center;
-        flex-wrap: wrap;
-        font-size: 1.3rem;
+        flex-wrap: wrap;     
     }    
     .img__qs{
         grid-template-rows: repeat(2, 1fr);
@@ -412,19 +371,9 @@ main h3{
     .principales h2{
         font-size: 1.5rem;
     }
-    .textoa{
-        font-size: 1rem;
-    }
-    .textob{
-        font-size: 1rem;
-    }
-    .textoc{
-        font-size: 1rem;
-    }
     .copyright{
         text-align: center;
         flex-wrap: wrap;
-        font-size: 0.8rem;
     }    
     main h2{
         font-size: 1.5rem;
