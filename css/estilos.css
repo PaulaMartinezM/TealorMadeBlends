@@ -90,6 +90,9 @@ footer{
     font-size: 0.7rem;
     
 }
+#ceremonia{
+    padding-top: 10rem;
+}
 .main{
     font-family: 'Asap',sans-serif;
     color: #768D7B;   
@@ -408,5 +411,8 @@ main h3{
     .contacto{
         display: grid;
         grid-template-areas: "nombre" "apellido" "email" "edad" "sexo" "comentarios" "condiciones" "botones";                   
+    }
+    #ceremonia{
+        padding-top: 0;
     }
 }

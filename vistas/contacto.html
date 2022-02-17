@@ -48,52 +48,57 @@
             </div>
           </nav>
     </header>
-    <main class="main__contacto">
-        <section class="formulario">
-            <form class="form" action="usuarioContacto" method="get" enctype="text/plain">
-                <fieldset>
-                <legend>CONTACTO</legend>
-                <div class="contacto">
-                    <div class="nombre">
-                        <label for="nombre">Nombre:</label>
-                        <input type="text" name="nombre" required>
+    <main>
+        <div class="container m-2">
+            <div class="row align-middle">
+                <div class="col-md-6">
+                    <div class="formulario">
+                        <form class="form" action="usuarioContacto" method="get" enctype="text/plain">
+                            <fieldset>
+                            <legend>CONTACTO</legend>
+                            <div class="mb-3">
+                                <div class="mb-3">
+                                    <label for="nombre">Nombre:</label>
+                                    <input type="text" name="nombre" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="apellido">Apellido:</label>
+                                    <input type="text" name="apellido" required>
+                                </div>
+                                <div class="mb-3"> 
+                                    <label for="email">E-mail:</label>
+                                    <input type="email" name="email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="edad">Edad:</label>
+                                    <input type="number" name="edad">
+                                </div>
+                                <div class="mb-3">
+                                    <div class="form__texto">Hombre</div>
+                                    <input class="sexo" type="radio" name="sexo" value="hombre" />
+                                    <div class="form__texto">Mujer</div>
+                                    <input class="sexo" type="radio" name="sexo" value="mujer" />
+                                </div> 
+                                <div class="mb-3">
+                                    <textarea name="comentarios" id placeholder="Comentarios" cols="30" rows="10"></textarea>
+                                </div>               
+                                <div class="mb-3">
+                                    <div class="form__texto"><input type="checkbox" name="acepta" value="1" required/> Acepta términos y condiciones</div>          
+                                </div>
+                                <div class="botones">
+                                    <input class="boton" type="submit" value="Enviar">
+                                    <input class="boton" type="reset" value="Limpiar formulario">
+                                </div>           
+                            </div>
+                            </fieldset>
+                        </form>
                     </div>
-                    <div class="apellido">
-                        <label for="apellido">Apellido:</label>
-                        <input type="text" name="apellido" required>
-                    </div>
-                    <div class="email"> 
-                        <label for="email">E-mail:</label>
-                        <input type="email" name="email" required>
-                    </div>
-                    <div class="edad">
-                        <label for="edad">Edad:</label>
-                        <input type="number" name="edad">
-                    </div>
-                    <div class="sexo">
-                        <div class="form__texto">Hombre</div>
-                        <input class="sexo" type="radio" name="sexo" value="hombre" />
-                        <div class="form__texto">Mujer</div>
-                        <input class="sexo" type="radio" name="sexo" value="mujer" />
-                    </div> 
-                    <div class="comentarios">
-                        <textarea name="comentarios" id placeholder="Comentarios" cols="30" rows="10"></textarea>
-                    </div>               
-                    <div class="condiciones">
-                        <div class="form__texto"><input type="checkbox" name="acepta" value="1" required/> Acepta términos y condiciones</div>          
-                    </div>
-                    <div class="botones">
-                        <input class="boton" type="submit" value="Enviar">
-                        <input class="boton" type="reset" value="Limpiar formulario">
-                    </div>
-
                 </div>
-            </fieldset>
-            </form>
-        </section>
-        <section>
-            <img class="img__cata" src="../img/tealorTe.png" alt="Cata de Te">
-        </section>
+                <div class="col-md-6">
+                    <img id="ceremonia" class="img-fluid" src="../img/tealorTe.png" alt="Cata de Te">
+                </div>
+            </div>
+        </div>    
     </main>
     <footer>
         <div class="container">
