@@ -50,53 +50,70 @@
     </header>
     <main>
         <div class="container m-2">
-            <div class="row align-middle">
+            <div class="row justify-content-between align-content-center">
                 <div class="col-md-6">
                     <div class="formulario">
                         <form class="form" action="usuarioContacto" method="get" enctype="text/plain">
                             <fieldset>
                             <legend>CONTACTO</legend>
-                            <div class="mb-3">
-                                <div class="mb-3">
-                                    <label for="nombre">Nombre:</label>
-                                    <input type="text" name="nombre" required>
+                            <div class="row">
+                                <div class="col">
+                                  <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" required>
                                 </div>
-                                <div class="mb-3">
-                                    <label for="apellido">Apellido:</label>
-                                    <input type="text" name="apellido" required>
+                                <div class="col">
+                                  <input type="text" class="form-control" placeholder="Apellido" aria-label="Apellido" required>
                                 </div>
-                                <div class="mb-3"> 
-                                    <label for="email">E-mail:</label>
-                                    <input type="email" name="email" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="edad">Edad:</label>
-                                    <input type="number" name="edad">
-                                </div>
-                                <div class="mb-3">
-                                    <div class="form__texto">Hombre</div>
-                                    <input class="sexo" type="radio" name="sexo" value="hombre" />
-                                    <div class="form__texto">Mujer</div>
-                                    <input class="sexo" type="radio" name="sexo" value="mujer" />
-                                </div> 
-                                <div class="mb-3">
-                                    <textarea name="comentarios" id placeholder="Comentarios" cols="30" rows="10"></textarea>
-                                </div>               
-                                <div class="mb-3">
-                                    <div class="form__texto"><input type="checkbox" name="acepta" value="1" required/> Acepta términos y condiciones</div>          
-                                </div>
-                                <div class="botones">
-                                    <input class="boton" type="submit" value="Enviar">
-                                    <input class="boton" type="reset" value="Limpiar formulario">
-                                </div>           
                             </div>
+                            <div class="row">
+                                <div class="col">
+                                  <input type="email" class="form-control" placeholder="E-mail" aria-label="E-mail" required>
+                                </div>
+                                <div class="col">
+                                  <input type="number" class="form-control" placeholder="Edad" aria-label="Edad" required>
+                                </div>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Hombre">
+                                <label class="form-check-label" for="inlineRadio1">Hombre</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Mujer">
+                                <label class="form-check-label" for="inlineRadio2">Mujer</label>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="exampleFormControlTextarea1" class="form-label">Comentarios</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            </div>    
+                            <div class="col-12">
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                                  <label class="form-check-label" for="invalidCheck">
+                                    Acepta términos y condiciones
+                                  </label>
+                                  <div class="invalid-feedback">
+                                    Debe aceptar términos y condiciones antes de avanzar.
+                                  </div>
+                                </div>
+                            </div>    
+                            <div class="col-12">
+                                <button class="btn" type="submit">Enviar</button>
+                                <button class="btn" type="reset">Limpiar formulario</button>
+                            </div>                  
+                                
+                                           
+                            
                             </fieldset>
                         </form>
+                    
+                    
                     </div>
                 </div>
+            
                 <div class="col-md-6">
-                    <img id="ceremonia" class="img-fluid" src="../img/tealorTe.png" alt="Cata de Te">
+                    <img class="img-fluid" src="../img/tealorTe.png" alt="Cata de Te">
                 </div>
+            </div>
             </div>
         </div>    
     </main>

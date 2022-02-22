@@ -90,9 +90,6 @@ footer{
     font-size: 0.7rem;
     
 }
-#ceremonia{
-    padding-top: 10rem;
-}
 .main{
     font-family: 'Asap',sans-serif;
     color: #768D7B;   
@@ -172,6 +169,12 @@ label{
     margin-left: 1rem;
     background-color: #C49A64;
     color: white;
+}
+.btn{
+    background-color: #C49A64;
+    color: white;
+    outline-color: #C49A64;
+    outline-width: 0rem;
 }
 .texto__qs{
     font-family: 'Asap', sans-serif;
