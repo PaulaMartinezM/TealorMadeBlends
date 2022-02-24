@@ -1,0 +1,103 @@
+@media screen and (max-width: 768px) {
+    
+    .menu_lista{
+        grid-template-rows: repeat(6, 1fr);
+        justify-items: center;
+        grid-template-columns: auto;   
+    }
+    header nav li a{
+        font-size: 1.5rem;   
+    }
+    .principales{
+        text-align: center;
+        padding-left: 0;
+    }
+    .copyright{
+        text-align: center;
+        flex-wrap: wrap;     
+    }    
+    .img__qs{
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: auto;
+        justify-content: center;
+        align-content: center;
+        width: 100%;  
+        margin: 0;
+        padding: 0;   
+        padding-bottom: 1rem;  
+    }
+    .historia__te{
+        grid-template-rows: repeat(2,auto);
+        grid-template-columns: auto;
+        justify-content: center;
+    }
+    .video__historia{
+        position: relative;
+        padding-bottom: 61.5%;
+        height: 0;
+        overflow: hidden;
+        & iframe{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .ruta{
+        text-align: center;
+    }
+    .main__contacto{
+        grid-template-rows: repeat(2,auto);
+        grid-template-columns: auto;
+        align-items: center;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}
+@media screen and (max-width: 425px) {
+    header nav li a{
+        font-size: 1rem;   
+    }
+    .principales h2{
+        font-size: 1.5rem;
+    }
+    .copyright{
+        text-align: center;
+        flex-wrap: wrap;
+    }    
+    main h2{
+        font-size: 1.5rem;
+    }
+    .img__qs{
+        margin-left: 1rem;
+        margin-right: 2rem;
+        width: 90%;
+        justify-content: center;
+    }
+    .texto__qs{
+        text-align: justify;
+    }
+    .historia__te{
+        grid-template-rows: repeat(2,auto);
+        grid-template-columns: auto;
+        justify-content: center;
+    }
+    .video__historia{
+        position: relative;
+        padding-bottom: 61.5%;
+        height: 0;
+        overflow: hidden;
+        & iframe{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .contacto{
+        display: grid;
+        grid-template-areas: "nombre" "apellido" "email" "edad" "sexo" "comentarios" "condiciones" "botones";                   
+    }
+}
