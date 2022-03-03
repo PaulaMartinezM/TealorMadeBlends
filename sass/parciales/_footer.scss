@@ -1,0 +1,22 @@
+footer{
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    background-color: #C49A64;
+}
+.rrss{
+    display: flex;
+    justify-content: center;
+    padding-top: 3rem;
+}
+.logo__rrss{
+    padding-right: 1rem;
+}
+.copyright{
+    display: flex;
+    justify-content: center;
+    padding-top: 3rem;
+    font-family: 'Asap',sans-serif;
+    color: white;
+    font-size: 0.7rem;   
+}

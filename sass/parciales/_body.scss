@@ -1,8 +1,3 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: 0;
-}
 .container-fluid{
     background-color: #C49A64;
 }
@@ -12,21 +7,6 @@
 .nav-item{
     text-align: center;
 }
-header{
-    .marca{
-        display: grid;
-        background-color: #AABEAB;
-        justify-content: center;
-        width: 100%;
-        }
-        nav li a{
-            font-family: 'Asap', sans-serif;
-            font-size: 1.5rem;
-            text-decoration: none;
-            color: white;   
-        }
-    
-} 
 .banner{
     width: 100%;
 }
@@ -34,49 +14,31 @@ body{
     font-family: 'Asap', sans-serif;
     color: #768D7B;
 }   
+@mixin padding($top, $right, $bottom, $left) {
+    padding-top: $top;
+    padding-right: $right;
+    padding-bottom: $bottom;
+    padding-left: $left;
+}
+
 .principales{
     font-family: 'Asap', sans-serif;
     font-size: 1rem;
     text-align: center;
     color: #768D7B;
-    padding-top: 2rem;
-    padding-bottom: 1rem;
-    padding-left: 2rem;
+    @include padding(2rem, 0rem, 1rem, 2rem);
 }
 .inicio{
     display: flex;
     flex-direction: row-reverse;
     padding-top: 2rem;
-    width: 100%;
+    @extend .banner;
     & a{
         font-family: 'Asap', sans-serif;
         color: #AABEAB;
         text-decoration: none;
         font-weight: bold;
     } 
-}
-footer{
-    display: grid;
-    align-content: center;
-    justify-content: center;
-    background-color: #C49A64;
-}
-.rrss{
-    display: flex;
-    justify-content: center;
-    padding-top: 3rem;
-}
-.logo__rrss{
-    padding-right: 1rem;
-}
-.copyright{
-    display: flex;
-    justify-content: center;
-    padding-top: 3rem;
-    font-family: 'Asap',sans-serif;
-    color: white;
-    font-size: 0.7rem;
-    
 }
 .main{
     font-family: 'Asap',sans-serif;
@@ -86,10 +48,7 @@ footer{
         grid-template-columns: 2fr 2fr;
         justify-items: auto;
         align-items: center;
-        padding-left: 1rem;
-        padding-right: 1rem;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
+        @include padding(1rem, 1rem, 1rem, 1rem);
     }
 }
 legend{
@@ -115,9 +74,7 @@ label{
     display: grid;
     grid-template-rows: 0.5fr 3fr 2fr 1fr;
     gap: 2rem;
-    padding-top: 2rem;
-    padding-right: 1rem;
-    margin-left: 1rem;
+    @include padding(2rem, 1rem, 0, 0);
 }
 .img__qs{
     display: grid;
@@ -140,7 +97,7 @@ label{
     }
 }
 .parrafo{
-    width: 100%;
+    @extend .banner;
 }
 main{
     h2{
@@ -148,17 +105,15 @@ main{
         font-size: 2rem;
         font-weight: bold;
         color: #768D7B;
-        padding-top: 1.5rem;
-        padding-bottom: 1.5rem;
-        margin-left: 1rem;
+        @include padding(1.5rem, 0, 1.5rem, 0);
     }
     h3{
         font-family: 'Asap', sans-serif;
         font-size: 1.5rem;
         font-weight: bold;
         color: #768D7B;
-        padding-top: 1.5rem;
-        padding-bottom: 1rem;
+        @include padding(1.5rem, 0, 1rem, 0);
+        
     }
 } 
 .texto__historia{
@@ -181,7 +136,6 @@ main{
 .lista__tes {
     padding-top: 2rem;
     font-family: 'Asap', sans-serif;
-    color: #768D7B;
     padding-bottom: 2rem;
     line-height: 1.5rem;
     margin-left: 3rem;
@@ -190,6 +144,21 @@ main{
         text-decoration: none;
         color: #768D7B;
         font-weight: bold;
+    }
+}
+$colortes: (
+  "puerh":#d79596,
+  "earl": #a7aeba,
+  "frubosq": #bfa9ba,
+  "antonieta": #a68b79,
+  "chai": #a1c2c3,
+  "vmiel": #decba1,
+  "vfrutal": #e2bebf,
+  "vcitrico": #aec37c
+);
+@each $colorte, $valor in $colortes {
+    .te--#{$colorte}{
+        color: $valor;
     }
 }
 .te{
@@ -201,8 +170,7 @@ main{
 .te__blend{
     display: flex;
     flex-direction: column;
-    padding-left: 2rem;
-    padding-top: 2rem;
+    @include padding(2rem, 0, 0, 2rem)
     & img{
         width: 20rem;
         height: 20rem;

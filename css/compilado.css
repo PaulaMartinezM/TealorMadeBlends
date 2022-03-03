@@ -1,19 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: 0;
-}
-
-.container-fluid {
-  background-color: #C49A64;
-}
-
-.row {
-  padding-bottom: 0.5rem;
-}
-
-.nav-item {
-  text-align: center;
+  box-sizing: border-box;
 }
 
 header .marca {
@@ -30,7 +18,19 @@ header nav li a {
   color: white;
 }
 
-.banner {
+.container-fluid {
+  background-color: #C49A64;
+}
+
+.row {
+  padding-bottom: 0.5rem;
+}
+
+.nav-item {
+  text-align: center;
+}
+
+.banner, .inicio, .parrafo {
   width: 100%;
 }
 
@@ -45,6 +45,7 @@ body {
   text-align: center;
   color: #768D7B;
   padding-top: 2rem;
+  padding-right: 0rem;
   padding-bottom: 1rem;
   padding-left: 2rem;
 }
@@ -53,7 +54,6 @@ body {
   display: flex;
   flex-direction: row-reverse;
   padding-top: 2rem;
-  width: 100%;
 }
 
 .inicio a {
@@ -61,32 +61,6 @@ body {
   color: #AABEAB;
   text-decoration: none;
   font-weight: bold;
-}
-
-footer {
-  display: grid;
-  align-content: center;
-  justify-content: center;
-  background-color: #C49A64;
-}
-
-.rrss {
-  display: flex;
-  justify-content: center;
-  padding-top: 3rem;
-}
-
-.logo__rrss {
-  padding-right: 1rem;
-}
-
-.copyright {
-  display: flex;
-  justify-content: center;
-  padding-top: 3rem;
-  font-family: 'Asap',sans-serif;
-  color: white;
-  font-size: 0.7rem;
 }
 
 .main {
@@ -99,10 +73,10 @@ footer {
   grid-template-columns: 2fr 2fr;
   justify-items: auto;
   align-items: center;
-  padding-left: 1rem;
-  padding-right: 1rem;
   padding-top: 1rem;
+  padding-right: 1rem;
   padding-bottom: 1rem;
+  padding-left: 1rem;
 }
 
 legend {
@@ -133,7 +107,8 @@ label {
   gap: 2rem;
   padding-top: 2rem;
   padding-right: 1rem;
-  margin-left: 1rem;
+  padding-bottom: 0;
+  padding-left: 0;
 }
 
 .img__qs {
@@ -159,18 +134,15 @@ label {
   transform: translate(10px, 10px);
 }
 
-.parrafo {
-  width: 100%;
-}
-
 main h2 {
   font-family: 'Asap', sans-serif;
   font-size: 2rem;
   font-weight: bold;
   color: #768D7B;
   padding-top: 1.5rem;
+  padding-right: 0;
   padding-bottom: 1.5rem;
-  margin-left: 1rem;
+  padding-left: 0;
 }
 
 main h3 {
@@ -179,7 +151,9 @@ main h3 {
   font-weight: bold;
   color: #768D7B;
   padding-top: 1.5rem;
+  padding-right: 0;
   padding-bottom: 1rem;
+  padding-left: 0;
 }
 
 .texto__historia {
@@ -205,7 +179,6 @@ main h3 {
 .lista__tes {
   padding-top: 2rem;
   font-family: 'Asap', sans-serif;
-  color: #768D7B;
   padding-bottom: 2rem;
   line-height: 1.5rem;
   margin-left: 3rem;
@@ -218,6 +191,38 @@ main h3 {
   font-weight: bold;
 }
 
+.te--puerh {
+  color: #d79596;
+}
+
+.te--earl {
+  color: #a7aeba;
+}
+
+.te--frubosq {
+  color: #bfa9ba;
+}
+
+.te--antonieta {
+  color: #a68b79;
+}
+
+.te--chai {
+  color: #a1c2c3;
+}
+
+.te--vmiel {
+  color: #decba1;
+}
+
+.te--vfrutal {
+  color: #e2bebf;
+}
+
+.te--vcitrico {
+  color: #aec37c;
+}
+
 .te {
   display: flex;
   flex-direction: row;
@@ -228,8 +233,10 @@ main h3 {
 .te__blend {
   display: flex;
   flex-direction: column;
-  padding-left: 2rem;
   padding-top: 2rem;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 2rem;
 }
 
 .te__blend img {
@@ -247,6 +254,32 @@ main h3 {
   text-decoration: none;
   font-family: 'Asap', sans-serif;
   color: #768D7B;
+}
+
+footer {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  background-color: #C49A64;
+}
+
+.rrss {
+  display: flex;
+  justify-content: center;
+  padding-top: 3rem;
+}
+
+.logo__rrss {
+  padding-right: 1rem;
+}
+
+.copyright {
+  display: flex;
+  justify-content: center;
+  padding-top: 3rem;
+  font-family: 'Asap',sans-serif;
+  color: white;
+  font-size: 0.7rem;
 }
 
 @media screen and (max-width: 768px) {
