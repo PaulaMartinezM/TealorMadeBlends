@@ -170,7 +170,7 @@ $colortes: (
 .te__blend{
     display: flex;
     flex-direction: column;
-    @include padding(2rem, 0, 0, 2rem)
+    @include padding(2rem, 0, 0, 2rem);
     & img{
         width: 20rem;
         height: 20rem;
@@ -179,8 +179,7 @@ $colortes: (
     & img:hover{
         height: 25rem;
         width: 25rem;
-    } 
-    
+    }     
     & span{
         text-decoration: none;
         font-family: 'Asap', sans-serif;
