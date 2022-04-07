@@ -390,3 +390,6 @@ footer {
     grid-template-areas: "nombre" "apellido" "email" "edad" "sexo" "comentarios" "condiciones" "botones";
   }
 }
+#saludo{
+  justify-content: center;
+}
