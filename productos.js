@@ -1,53 +1,32 @@
-let nombreUsuario=prompt("Indique su Nombre");
-let apellido=prompt("Indique su Apellido");
+class Carrito{
 
-let compras = [];
-
-//Declaración de la función de agregado de nuevo item
-function nuevoItem(){
-    let nombreTeIngresado = prompt(`Ingrese el nombre del té o mix para yerba mate que desea adquirir:
-                                    Puerh
-                                    Earl Grey
-                                    Antonieta
-                                    Frutos del Bosque
-                                    Chai
-                                    Verde Miel
-                                    Verde Frutal
-                                    Verde Citrico
-                                    Mix Serrano
-                                    Frutos Rojos`)
-    
-    const nuevoProd = almacen.filter((producto)=>
-    producto.nombre.indexOf(nombreTeIngresado)!==-1)
-      
-    compras.push(nuevoProd[0]);                          
-}
-let opcion = ""
-while (opcion!="FIN")
-{
-    opcion = prompt(`Seleccione una opción: 
-                     1- Ingresar nuevo item al carrito
-                     2- FIN`);
-    if(opcion!="FIN"){
-        nuevoItem() 
-
+    constructor(productos){
+        this.productos=productos;
     }
-    else{
-        alert("Gracias por su compra!");
+
+    addProducto(producto)
+    {   
+        let mapped= this.productos.map(element=>element.producto);
+        
+        let enCarrito = mapped.find(element=>element.id===producto.id);
+
+        if(!enCarrito){
+            this.productos.push({cantidad:1, producto});
+        }  
+        else{
+            
+            let indexed = mapped.map(element=>element.id);
+            let index = indexed.indexOf(producto.id);
+            this.productos[index].cantidad+=1;
+        }      
+            
+
+        console.log(this.productos);
     }
-}
-
-console.log("Usuario: "+nombreUsuario+" "+apellido);
-
-let resultado = 0;
-let lista = "";
-for(item of compras){
-    resultado = resultado + item.precio;
-    lista = lista +" "+ item.nombre;
    
+    guardar()
+    {
+        localStorage.setItem("MI_CARRITO",JSON.stringify(this.productos));
+    }
+
 }
-console.log("Usted agregó a su carrito los siguientes productos: ");
-console.log(compras);
-console.log(compras.length)
-console.log("Usted agregó a su carrito los siguientes productos: "+ lista);
-console.log("El total a pagar es:"+ resultado);

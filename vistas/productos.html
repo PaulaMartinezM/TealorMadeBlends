@@ -11,9 +11,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Este sitio es la tienda virtual de Tealor Made Blends donde podrás comprar todos nuestros productos">
     <meta name="keywords" content="INFUSIONES, INFUSIONAR, TÉ, YERBA MATE, BLENDS">
+    <script src="../productos.js"></script>
     <script src="../almacen.js"></script>
     <script src="../saludoCategoria.js"></script>
-    <script defer src="../productos.js"></script>
     <title>Tienda Tealor Made Blends</title>
 </head>
 <body onload="init()">
@@ -46,7 +46,7 @@
                     <a class="nav-link active" href="./contacto.html">CONTACTO</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" href="#">
+                    <a class="nav-link active" id="mostrarCompra" href="#">
                         <img src="../img/shopping-cart-16.png" alt="carrito-compras">
                     </a>
                   </li>
@@ -60,6 +60,8 @@
       <h3 id="carrito" style="margin:2rem">Seleccione la categoría que desea comprar: </h3>
       <br>
       <div id="cateProd"></div>
+      
+      <div id="compra"></div>
         <div class="container">
             <div class="row">
                 <h2 class="text-center">BLENDS DE TE</h2>
