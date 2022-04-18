@@ -6,7 +6,7 @@ function init(){
     mostrarCategorias();
 }
 
-const data = JSON.parse(localStorage.getItem("MI_CARRITO"));
+const data = JSON.parse(localStorage.getItem("MI_CARRITO")) || [];
 
 
 miCarrito = new Carrito([]);
@@ -19,8 +19,6 @@ else
 {
   miCarrito = new Carrito(data);
 }
-console.log(miCarrito.productos.reduce((acc,element)=>acc+=element.precio,0));
-
 
 function mostrarCategorias()
 {
@@ -36,8 +34,6 @@ function mostrarCategorias()
 
 function mostrarProductos(categoria)
 {
-  /*document.querySelector("#cateProd").innerHTML=`<h3>Productos en Categoría: ${categoria.nombre}</h3>`*/
-  
   const productosFiltrados = filtrarProductos(categoria.nombre);
   
   let contenedor = document.getElementById("mainContainer");
@@ -119,16 +115,23 @@ function actualizarCarrito()
   contenedor.innerHTML="";
   let prods = miCarrito.productos;
   let nuevoContenedor=document.createElement("div");
-  nuevoContenedor.setAttribute("style", "display:flex;flex-direction:column");
-  prods.forEach(producto=>{
+  nuevoContenedor.setAttribute("style", "display:flex;flex-direction:column; margin:2rem");
+  nuevoContenedor.innerHTML="<h3>Su Carrito:</h3>";
+  prods.forEach((p)=>{
     let nodoLi = document.createElement("div");
-    nodoLi.innerHTML=`${producto.nombre} - ${producto.precio}<br>`
+    nodoLi.innerHTML=`Cantidad: ${p.cantidad} - Producto: ${p.producto.nombre} - Precio unitario: $ ${p.producto.precio}<br>`
     nuevoContenedor.appendChild(nodoLi)
-    
-  })
-
-  contenedor.appendChild(nuevoContenedor);
+    })
   
+  let totalCarrito = miCarrito.productos.reduce((acc,element)=>acc+=element.producto.precio*element.cantidad,0);
+  
+  let contenedorTotal = document.createElement("div");
+  contenedorTotal.setAttribute("style","margin:2rem")
+  contenedorTotal.innerHTML=` 
+  <h3>TOTAL compra: $ ${totalCarrito}</h3>`;
+    
+  contenedor.appendChild(nuevoContenedor);
+  contenedor.appendChild(contenedorTotal);
   miCarrito.guardar();
 }
 
@@ -136,7 +139,7 @@ function mostrarCarrito()
 {
   let contenedor = document.getElementById("mainContainer");
   let nodoCarrito = document.getElementById("carrito");
-    
+      
   if(nodoCarrito===null)
   {
     nodoCarrito = document.createElement("div");
