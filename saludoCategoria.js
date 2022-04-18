@@ -119,7 +119,9 @@ function actualizarCarrito()
   nuevoContenedor.innerHTML="<h3>Su Carrito:</h3>";
   prods.forEach((p)=>{
     let nodoLi = document.createElement("div");
-    nodoLi.innerHTML=`Cantidad: ${p.cantidad} - Producto: ${p.producto.nombre} - Precio unitario: $ ${p.producto.precio}<br>`
+    nodoLi.innerHTML=`Cantidad: ${p.cantidad} - Producto: ${p.producto.nombre} - Precio unitario: $ ${p.producto.precio}<br>
+    <button class="btn" onclick="borrarItem('${p.id})">Eliminar</button>`;
+
     nuevoContenedor.appendChild(nodoLi)
     })
   
@@ -128,11 +130,14 @@ function actualizarCarrito()
   let contenedorTotal = document.createElement("div");
   contenedorTotal.setAttribute("style","margin:2rem")
   contenedorTotal.innerHTML=` 
-  <h3>TOTAL compra: $ ${totalCarrito}</h3>`;
-    
+  <h3>TOTAL compra: $ ${totalCarrito}</h3>
+  <button class="btn" style="display-flex" onclick="borrarCarrito()">Vaciar Carrito</button><button  class="btn" type="submit" onclick="comprarCarrito()">Comprar</button>`;
+  
   contenedor.appendChild(nuevoContenedor);
   contenedor.appendChild(contenedorTotal);
+  
   miCarrito.guardar();
+  
 }
 
 function mostrarCarrito()
@@ -150,4 +155,27 @@ function mostrarCarrito()
   
 
   actualizarCarrito(); 
+}
+
+function borrarItem(id)
+{
+  let mapped = miCarrito.map((element)=>element.producto.id);
+  let index =mapped.indexOf(producto.id);
+  miCarrito.splice(index,1);
+  
+  mostrarCarrito();
+
+}
+
+function borrarCarrito()
+{
+  localStorage.clear();
+  
+  mostrarCarrito();
+}
+function comprarCarrito()
+{
+  localStorage.removeItem("MI_CARRITO");
+
+  mostrarCarrito();
 }
