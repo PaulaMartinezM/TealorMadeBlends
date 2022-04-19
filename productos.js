@@ -28,5 +28,6 @@ class Carrito{
     {
         localStorage.setItem("MI_CARRITO",JSON.stringify(this.productos));
     }
+    
 
 }

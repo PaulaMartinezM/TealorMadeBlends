@@ -120,7 +120,7 @@ function actualizarCarrito()
   prods.forEach((p)=>{
     let nodoLi = document.createElement("div");
     nodoLi.innerHTML=`Cantidad: ${p.cantidad} - Producto: ${p.producto.nombre} - Precio unitario: $ ${p.producto.precio}<br>
-    <button class="btn" onclick="borrarItem('${p.id})">Eliminar</button>`;
+    <button class="btn" onclick="borrarItem('${p.producto.id})">Eliminar</button>`;
 
     nuevoContenedor.appendChild(nodoLi)
     })
@@ -157,25 +157,23 @@ function mostrarCarrito()
   actualizarCarrito(); 
 }
 
-function borrarItem(id)
+function borrarItem(producto)
 {
   let mapped = miCarrito.map((element)=>element.producto.id);
   let index =mapped.indexOf(producto.id);
   miCarrito.splice(index,1);
-  
-  mostrarCarrito();
 
 }
 
 function borrarCarrito()
 {
   localStorage.clear();
-  
+  miCarrito=[];
   mostrarCarrito();
+  
 }
 function comprarCarrito()
 {
   localStorage.removeItem("MI_CARRITO");
-
-  mostrarCarrito();
+  
 }
