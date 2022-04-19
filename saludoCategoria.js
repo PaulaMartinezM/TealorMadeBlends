@@ -6,19 +6,8 @@ function init(){
     mostrarCategorias();
 }
 
-const data = JSON.parse(localStorage.getItem("MI_CARRITO")) || [];
 
-
-miCarrito = new Carrito([]);
-
-if(!miCarrito)
-{
-  miCarrito = new Carrito([]);
-}
-else
-{
-  miCarrito = new Carrito(data);
-}
+const miCarrito = new Carrito(JSON.parse(localStorage.getItem("MI_CARRITO")) || []);
 
 function mostrarCategorias()
 {
@@ -65,6 +54,7 @@ function mostrarProductos(categoria)
   mostrarCarrito();
 }
 
+
   function filtrarProductos(nombreCategoria)
 {
     return almacen.filter(producto=>producto.categoria===nombreCategoria);
@@ -97,7 +87,7 @@ function getProductButton(product)
     }
     else{
       return `<button class="btn">No Disponible</button>`;
-    }
+    } 
 }
 
 function agregarAlCarrito(productId)
@@ -120,7 +110,7 @@ function actualizarCarrito()
   prods.forEach((p)=>{
     let nodoLi = document.createElement("div");
     nodoLi.innerHTML=`Cantidad: ${p.cantidad} - Producto: ${p.producto.nombre} - Precio unitario: $ ${p.producto.precio}<br>
-    <button class="btn" onclick="borrarItem('${p.producto.id})">Eliminar</button>`;
+    <button class="btn" onclick="borrarItem(${p.producto.id})">Eliminar</button>`;
 
     nuevoContenedor.appendChild(nodoLi)
     })
@@ -159,21 +149,24 @@ function mostrarCarrito()
 
 function borrarItem(producto)
 {
-  let mapped = miCarrito.map((element)=>element.producto.id);
+  let mapped = miCarrito.productos.map((element)=>element.producto.id);
   let index =mapped.indexOf(producto.id);
-  miCarrito.splice(index,1);
-
+  miCarrito.productos.splice(index,1);
+  mostrarCarrito();
+  
 }
 
 function borrarCarrito()
 {
   localStorage.clear();
-  miCarrito=[];
+  miCarrito.productos=[];
   mostrarCarrito();
   
 }
 function comprarCarrito()
 {
   localStorage.removeItem("MI_CARRITO");
+  miCarrito.productos=[];
+  mostrarCarrito();
   
 }
