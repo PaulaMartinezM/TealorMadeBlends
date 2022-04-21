@@ -1,3 +1,4 @@
+const { showHelpOnFail } = require("yargs");
 
 
 
@@ -166,7 +167,17 @@ function borrarCarrito()
 function comprarCarrito()
 {
   localStorage.removeItem("MI_CARRITO");
+  compraExitosa();
   miCarrito.productos=[];
   mostrarCarrito();
-  
+}
+
+function compraExitosa()
+{
+  showHelpOnFail.fire({
+    Title:`Tealor Made Blends`,
+    text: `Gracias por su compra!`,
+    icon: "success",
+    confirmationButton: `Aceptar`
+  })
 }
