@@ -1,4 +1,6 @@
-const { showHelpOnFail } = require("yargs");
+//const { showHelpOnFail } = require("yargs");
+
+//const { red } = require("color-name");
 
 
 
@@ -83,12 +85,13 @@ function getProductButton(product)
 {
     if(product.stock>0)
     {
-      return `<button class="btn" onclick="agregarAlCarrito(${product.id})">Agregar al Carrito</button>`
+      return `<button class="btn" onclick= "agregarAlCarrito(${product.id})">Agregar al Carrito</button>`
       
     }
     else{
       return `<button class="btn">No Disponible</button>`;
     } 
+    
 }
 
 function agregarAlCarrito(productId)
@@ -166,18 +169,27 @@ function borrarCarrito()
 }
 function comprarCarrito()
 {
-  localStorage.removeItem("MI_CARRITO");
   compraExitosa();
-  miCarrito.productos=[];
-  mostrarCarrito();
+  
 }
 
 function compraExitosa()
 {
-  showHelpOnFail.fire({
-    Title:`Tealor Made Blends`,
-    text: `Gracias por su compra!`,
-    icon: "success",
-    confirmationButton: `Aceptar`
-  })
+  if (miCarrito.productos===[])
+  {
+   Toastify({ text:"Su carrito está vacío", 
+              duration: 3000, 
+            }).showToast();
+  }
+  else
+  {
+    swal({
+      title:`Gracias por tu compra!`,
+      icon: "success",
+    })
+
+  localStorage.removeItem("MI_CARRITO");
+  miCarrito.productos=[];
+  mostrarCarrito();
+  }
 }
