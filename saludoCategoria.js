@@ -65,7 +65,7 @@ function mostrarProductos(categoria)
 
 function getProductInfo(product)
 {
-  return `<div>
+  /* return `<div>
           <div style="font.size:1.5rem; margin:2rem">
           Nombre Producto: ${product.nombre}<br>
 
@@ -77,6 +77,24 @@ function getProductInfo(product)
             ${getProductButton(product)}
           </div>
           </div>`
+          */
+    return `<div class="container">
+             <div class="row row-cols-1 row-cols-md-3 g-4">
+              <div class="col">
+                <div class="card h-100">
+                  <img src="${product.foto}" class="card-img-top">
+                  <div class="card-body">
+                    <h5 class="card-title text-center">${product.nombre}</h5>
+                    <p class="card-text text-center">Variedad: ${product.variedad}</p>
+                    <p class="card-text text-center">Precio: ${product.precio}</p>
+                  </div>
+                  <div class="btn">
+                    ${getProductButton(product)}
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>`
 
 }
 
@@ -175,7 +193,7 @@ function comprarCarrito()
 
 function compraExitosa()
 {
-  if (miCarrito.productos===[])
+  if (miCarrito.length===0)
   {
    Toastify({ text:"Su carrito está vacío", 
               duration: 3000, 
