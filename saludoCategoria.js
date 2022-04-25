@@ -27,27 +27,8 @@ function mostrarCategorias()
 function mostrarProductos(categoria)
 {
   const productosFiltrados = filtrarProductos(categoria.nombre);
-  
-  let contenedor = document.getElementById("mainContainer");
-  if(contenedor===null)
-  {
-    contenedor = document.createElement("div");
-    contenedor.setAttribute("id", "mainContainer");
-    document.querySelector("#cateProd").appendChild(contenedor);
-  }
-  
-  let nodoProductos = document.getElementById("productos");
-  if(nodoProductos===null)
-  {
-    nodoProductos = document.createElement("div");
-    nodoProductos.setAttribute("id", "productos");
-    contenedor.appendChild(nodoProductos);
-  }
-  else 
-  {
-    nodoProductos.innerHTML="";
-  }
-
+    
+  let nodoProductos = document.getElementById("cateProd");
   let cadena ='';
   productosFiltrados.forEach((element)=>{
     cadena+=getProductInfo(element);
@@ -60,7 +41,7 @@ function mostrarProductos(categoria)
 
   function filtrarProductos(nombreCategoria)
 {
-    return almacen.filter(producto=>producto.categoria===nombreCategoria);
+    return almacen.filter((producto)=>producto.categoria===nombreCategoria);
 }
 
 function getProductInfo(product)
@@ -78,9 +59,7 @@ function getProductInfo(product)
           </div>
           </div>`
           */
-    return `<div class="container">
-             <div class="row row-cols-1 row-cols-md-3 g-4">
-              <div class="col">
+    return `<div class="col">
                 <div class="card h-100">
                   <img src="${product.foto}" class="card-img-top">
                   <div class="card-body">
@@ -92,8 +71,6 @@ function getProductInfo(product)
                     ${getProductButton(product)}
                   </div>
                 </div>
-              </div>
-            </div>
             </div>`
 
 }
