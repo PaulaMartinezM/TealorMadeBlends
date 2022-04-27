@@ -17,6 +17,7 @@ function mostrarCategorias()
     categorias.forEach((categoria)=>{
         const myBtn = document.createElement("button");
         myBtn.setAttribute("class", "btn");
+        myBtn.setAttribute("style", "margin-left:2rem");
         myBtn.innerHTML= categoria.nombre;
         document.querySelector("#carrito").appendChild(myBtn);
         myBtn.addEventListener("click",()=>mostrarProductos(categoria));
@@ -46,19 +47,6 @@ function mostrarProductos(categoria)
 
 function getProductInfo(product)
 {
-  /* return `<div>
-          <div style="font.size:1.5rem; margin:2rem">
-          Nombre Producto: ${product.nombre}<br>
-
-          Variedad: ${product.variedad}<br>
-
-          Precio: ${product.precio}<br>
-          </div>
-          <div class="btn">
-            ${getProductButton(product)}
-          </div>
-          </div>`
-          */
     return `<div class="col">
                 <div class="card h-100">
                   <img src="${product.foto}" class="card-img-top">
@@ -120,7 +108,7 @@ function actualizarCarrito()
   contenedorTotal.setAttribute("style","margin:2rem")
   contenedorTotal.innerHTML=` 
   <h3>TOTAL compra: $ ${totalCarrito}</h3>
-  <button class="btn" style="display-flex" onclick="borrarCarrito()">Vaciar Carrito</button><button  class="btn" type="submit" onclick="comprarCarrito()">Comprar</button>`;
+  <button class="btn" style="display-flex;" onclick="borrarCarrito()">Vaciar Carrito</button><button  class="btn" type="submit" style="margin-left:2rem" onclick="comprarCarrito()">Comprar</button>`;
   
   contenedor.appendChild(nuevoContenedor);
   contenedor.appendChild(contenedorTotal);
