@@ -18,6 +18,10 @@ header nav li a {
   color: white;
 }
 
+#saludo {
+  justify-content: center;
+}
+
 .container-fluid {
   background-color: #C49A64;
 }
@@ -389,7 +393,4 @@ footer {
     display: grid;
     grid-template-areas: "nombre" "apellido" "email" "edad" "sexo" "comentarios" "condiciones" "botones";
   }
-}
-#saludo{
-  justify-content: center;
 }
